@@ -1,0 +1,374 @@
+14:02:58 **** Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_adc.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_adc.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_adc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_adc.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_adc_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_adc_ex.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_adc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_adc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_cortex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_cortex.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_dma.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_dma.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_dma_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_dma_ex.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_dma_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_exti.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_exti.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_flash.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_flash.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_flash_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_flash_ex.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_gpio.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_gpio.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_pwr.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_pwr.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_pwr_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_pwr_ex.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_pwr_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_rcc.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_rcc.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_rcc_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_rcc_ex.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_spi.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_spi.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_spi.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_spi.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_spi_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_spi_ex.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_spi_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_spi_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_tim.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_tim.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_tim.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_tim_ex.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_tim_ex.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_tim_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_adc.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_adc.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_adc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_adc.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_dma.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_dma.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_rcc.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_rcc.d" -MT"Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32G0xx_HAL_Driver/Src/stm32g0xx_ll_rcc.o"
+arm-none-eabi-gcc -mcpu=cortex-m0plus -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32g0b1retx.d" -MT"Core/Startup/startup_stm32g0b1retx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Startup/startup_stm32g0b1retx.o" "../Core/Startup/startup_stm32g0b1retx.s"
+arm-none-eabi-gcc "../Core/Src/LoRa.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/LoRa.d" -MT"Core/Src/LoRa.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/LoRa.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32g0xx_hal_msp.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g0xx_hal_msp.d" -MT"Core/Src/stm32g0xx_hal_msp.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32g0xx_hal_msp.o"
+In file included from ../Core/Src/LoRa.c:1:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+arm-none-eabi-gcc "../Core/Src/stm32g0xx_it.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32g0xx_it.d" -MT"Core/Src/stm32g0xx_it.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/stm32g0xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/syscalls.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32g0xx.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32g0xx.d" -MT"Core/Src/system_stm32g0xx.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/system_stm32g0xx.o"
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  27088	     20	   2188	  29296	   7270	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+14:30:18 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-size   motor-cc.elf 
+   text	   data	    bss	    dec	    hex	filename
+  27088	     20	   2188	  29296	   7270	motor-cc.elf
+Finished building: default.size.stdout
+ 
+14:38:23 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  27088	     20	   2188	  29296	   7270	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+14:39:29 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:172:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  172 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  27088	     20	   2212	  29320	   7288	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+14:42:04 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-size   motor-cc.elf 
+   text	   data	    bss	    dec	    hex	filename
+  27088	     20	   2212	  29320	   7288	motor-cc.elf
+Finished building: default.size.stdout
+ 
+14:45:20 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-size   motor-cc.elf 
+   text	   data	    bss	    dec	    hex	filename
+  27088	     20	   2212	  29320	   7288	motor-cc.elf
+Finished building: default.size.stdout
+ 
+15:11:17 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:175:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  175 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  27108	     20	   2220	  29348	   72a4	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+15:13:17 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:175:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  175 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  27108	     20	   2220	  29348	   72a4	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+15:20:16 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:175:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  175 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  27104	     20	   2220	  29344	   72a0	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+15:25:47 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:197:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  197 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  27136	     20	   2220	  29376	   72c0	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+15:48:33 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:227:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  227 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  27312	     20	   2220	  29552	   7370	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+15:50:14 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:226:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  226 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  27300	     20	   2220	  29540	   7364	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+15:51:46 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:232:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  232 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  27312	     20	   2220	  29552	   7370	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+16:11:12 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:258:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  258 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  27440	     20	   2220	  29680	   73f0	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 

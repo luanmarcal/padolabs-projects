@@ -52,12 +52,13 @@ uint8_t read_data[128];
 uint8_t send_data[128];
 int			RSSI;
 uint16_t teste;
-uint8_t received_data[10];
-uint8_t packet_size = 0;
+uint32_t received_data[10];
+uint32_t packet_size = 0, lora_data;
 
-uint8_t contador;
+uint8_t contador, cont = 0, flag = 0;
 uint32_t e_analogica, ADmax;
 float tensao, media=0, corrente;
+
 
 /* USER CODE END PV */
 
@@ -96,7 +97,84 @@ float calcTensao(uint16_t num){
 	float temp = (3.3 * (num / 4095.0));
 	return temp;
 }
+void converter_dados(uint32_t num){
+	if(flag == 1){
 
+		switch(num){
+				case 1:
+					PWM_Set_DC(&htim2, TIM_CHANNEL_1, 0);
+					break;
+
+				case 2:
+					PWM_Set_DC(&htim2, TIM_CHANNEL_1, 30);
+					break;
+
+				case 3:
+					PWM_Set_DC(&htim2, TIM_CHANNEL_1, 50);
+					break;
+
+				case 4:
+					PWM_Set_DC(&htim2, TIM_CHANNEL_1, 75);
+					break;
+
+				case 5:
+					PWM_Set_DC(&htim2, TIM_CHANNEL_1, 100);
+					break;
+
+				case 6:
+					PWM_Set_DC(&htim2, TIM_CHANNEL_1, 100);
+					break;
+
+				case 7:
+					PWM_Set_DC(&htim2, TIM_CHANNEL_1, 100);
+					break;
+
+				case 8:
+					PWM_Set_DC(&htim2, TIM_CHANNEL_1, 30);
+					break;
+
+				case 9:
+					PWM_Set_DC(&htim2, TIM_CHANNEL_1, 30);
+					break;
+
+				case 10:
+					if(flag == 1 && cont > 1){
+						flag = 0;
+						cont = 0;
+						PWM_Set_DC(&htim2, TIM_CHANNEL_1, 0);
+					}
+					break;
+
+				 case 11:
+					 PWM_Set_DC(&htim2, TIM_CHANNEL_1, 30);
+					break;
+
+				 case 12:
+					 PWM_Set_DC(&htim2, TIM_CHANNEL_1, 30);
+					break;
+
+				 case 13:
+					 PWM_Set_DC(&htim2, TIM_CHANNEL_1, 30);
+					break;
+
+				 case 14:
+					 PWM_Set_DC(&htim2, TIM_CHANNEL_1, 30);
+					break;
+
+				 case 15:
+					 PWM_Set_DC(&htim2, TIM_CHANNEL_1, 30);
+					break;
+
+				 case 16:
+					 PWM_Set_DC(&htim2, TIM_CHANNEL_1, 30);
+					break;
+
+				 case 17:
+					 PWM_Set_DC(&htim2, TIM_CHANNEL_1, 30);
+					break;
+		}
+	}
+}
 /* USER CODE END 0 */
 
 /**
@@ -168,8 +246,15 @@ int main(void)
 
   while (1)
   {
+	  if(received_data[0] != 0){
+		  lora_data = received_data[0];
 
-	  packet_size = LoRa_receive(&myLoRa, received_data, 10);
+		  if(lora_data == 10 ){
+			  flag = 1;
+			  cont ++;
+		  }
+  	  }
+	  packet_size = LoRa_receive(&myLoRa, received_data, 1);
 	  HAL_Delay(500);
 
 	  sConfig.Channel = ADC_CHANNEL_9;
@@ -192,29 +277,7 @@ int main(void)
 
 	  corrente = (0.027 * e_analogica) / 3500.0;
 
-
-
-	  switch(contador){
-	  	case 1:
-	  		PWM_Set_DC(&htim2, TIM_CHANNEL_1, 0);
-	  		break;
-
-	  	case 2:
-	  		PWM_Set_DC(&htim2, TIM_CHANNEL_1, 30);
-	  		break;
-
-	  	case 3:
-	  		PWM_Set_DC(&htim2, TIM_CHANNEL_1, 50);
-	  		break;
-
-	  	case 4:
-	  		PWM_Set_DC(&htim2, TIM_CHANNEL_1, 75);
-	  		break;
-
-	  	case 5:
-	  		PWM_Set_DC(&htim2, TIM_CHANNEL_1, 100);
-	  		break;
-	  }
+	  converter_dados(lora_data);
 
 
     /* USER CODE END WHILE */
