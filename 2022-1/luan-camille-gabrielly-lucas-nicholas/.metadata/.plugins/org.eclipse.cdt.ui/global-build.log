@@ -372,3 +372,799 @@ Finished building: motor-cc.bin
  
 Finished building: motor-cc.list
  
+17:21:43 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:257:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  257 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+../Core/Src/main.c:282:27: warning: passing argument 2 of 'LoRa_transmit' makes pointer from integer without a cast [-Wint-conversion]
+  282 |    LoRa_transmit(&myLoRa, currente, 1, 100);
+      |                           ^~~~~~~~
+      |                           |
+      |                           uint32_t {aka long unsigned int}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:123:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t' {aka 'long unsigned int'}
+  123 | uint8_t LoRa_transmit(LoRa* _LoRa, uint8_t* data, uint8_t length, uint16_t timeout);
+      |                                    ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  27836	     24	   2224	  30084	   7584	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+17:26:33 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:257:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  257 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+../Core/Src/main.c:282:27: warning: passing argument 2 of 'LoRa_transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  282 |    LoRa_transmit(&myLoRa, &currente, 1, 100);
+      |                           ^~~~~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:123:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  123 | uint8_t LoRa_transmit(LoRa* _LoRa, uint8_t* data, uint8_t length, uint16_t timeout);
+      |                                    ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  27832	     24	   2224	  30080	   7580	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+17:32:04 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:27: warning: passing argument 2 of 'LoRa_transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  249 |    LoRa_transmit(&myLoRa, &currente, 1, 100);
+      |                           ^~~~~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:123:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  123 | uint8_t LoRa_transmit(LoRa* _LoRa, uint8_t* data, uint8_t length, uint16_t timeout);
+      |                                    ~~~~~~~~~^~~~
+../Core/Src/main.c:259:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  259 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  27832	     24	   2224	  30080	   7580	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+17:35:17 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:27: warning: passing argument 2 of 'LoRa_transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  249 |    LoRa_transmit(&myLoRa, &currente, 1, 100);
+      |                           ^~~~~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:123:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  123 | uint8_t LoRa_transmit(LoRa* _LoRa, uint8_t* data, uint8_t length, uint16_t timeout);
+      |                                    ~~~~~~~~~^~~~
+../Core/Src/main.c:240:26: warning: unused variable 'sConfig' [-Wunused-variable]
+  240 |   ADC_ChannelConfTypeDef sConfig = {0};
+      |                          ^~~~~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22576	     24	   2216	  24816	   60f0	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+15:14:27 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:27: warning: passing argument 2 of 'LoRa_transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  249 |    LoRa_transmit(&myLoRa, &currente, 1, 100);
+      |                           ^~~~~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:123:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  123 | uint8_t LoRa_transmit(LoRa* _LoRa, uint8_t* data, uint8_t length, uint16_t timeout);
+      |                                    ~~~~~~~~~^~~~
+../Core/Src/main.c:259:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  259 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  27832	     24	   2224	  30080	   7580	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+15:49:24 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:249:27: warning: passing argument 2 of 'LoRa_transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  249 |    LoRa_transmit(&myLoRa, &currente, 1, 100);
+      |                           ^~~~~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:123:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  123 | uint8_t LoRa_transmit(LoRa* _LoRa, uint8_t* data, uint8_t length, uint16_t timeout);
+      |                                    ~~~~~~~~~^~~~
+../Core/Src/main.c:259:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  259 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  28484	     24	   2224	  30732	   780c	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+15:50:45 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Falling_Callback':
+../Core/Src/main.c:203:5: warning: 'main' is normally a non-static function [-Wmain]
+  203 | int main(void)
+      |     ^~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:268:27: warning: passing argument 2 of 'LoRa_transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  268 |    LoRa_transmit(&myLoRa, &currente, 1, 100);
+      |                           ^~~~~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:123:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  123 | uint8_t LoRa_transmit(LoRa* _LoRa, uint8_t* data, uint8_t length, uint16_t timeout);
+      |                                    ~~~~~~~~~^~~~
+../Core/Src/main.c:278:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  278 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+../Core/Src/main.c: In function 'HAL_GPIO_EXTI_Falling_Callback':
+../Core/Src/main.c:362:13: error: invalid storage class for function 'MX_ADC1_Init'
+  362 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:419:13: error: invalid storage class for function 'MX_SPI1_Init'
+  419 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:459:13: error: invalid storage class for function 'MX_TIM2_Init'
+  459 | static void MX_TIM2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:518:13: error: invalid storage class for function 'MX_GPIO_Init'
+  518 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:586:1: error: expected declaration or statement at end of input
+  586 | }
+      | ^
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:67:13: warning: 'MX_GPIO_Init' used but never defined
+   67 | static void MX_GPIO_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:68:13: warning: 'MX_TIM2_Init' used but never defined
+   68 | static void MX_TIM2_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:69:13: warning: 'MX_ADC1_Init' used but never defined
+   69 | static void MX_ADC1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:70:13: warning: 'MX_SPI1_Init' used but never defined
+   70 | static void MX_SPI1_Init(void);
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:577:6: warning: 'Error_Handler' defined but not used [-Wunused-function]
+  577 | void Error_Handler(void)
+      |      ^~~~~~~~~~~~~
+../Core/Src/main.c:518:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  518 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:459:13: warning: 'MX_TIM2_Init' defined but not used [-Wunused-function]
+  459 | static void MX_TIM2_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:419:13: warning: 'MX_SPI1_Init' defined but not used [-Wunused-function]
+  419 | static void MX_SPI1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:362:13: warning: 'MX_ADC1_Init' defined but not used [-Wunused-function]
+  362 | static void MX_ADC1_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:317:6: warning: 'SystemClock_Config' defined but not used [-Wunused-function]
+  317 | void SystemClock_Config(void)
+      |      ^~~~~~~~~~~~~~~~~~
+../Core/Src/main.c:203:5: warning: 'main' defined but not used [-Wunused-function]
+  203 | int main(void)
+      |     ^~~~
+make: *** [Core/Src/subdir.mk:37: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+15:50:59 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:269:27: warning: passing argument 2 of 'LoRa_transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  269 |    LoRa_transmit(&myLoRa, &currente, 1, 100);
+      |                           ^~~~~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:123:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  123 | uint8_t LoRa_transmit(LoRa* _LoRa, uint8_t* data, uint8_t length, uint16_t timeout);
+      |                                    ~~~~~~~~~^~~~
+../Core/Src/main.c:279:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  279 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  28604	     24	   2224	  30852	   7884	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+15:55:30 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:270:27: warning: passing argument 2 of 'LoRa_transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  270 |    LoRa_transmit(&myLoRa, &currente, 1, 100);
+      |                           ^~~~~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:123:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  123 | uint8_t LoRa_transmit(LoRa* _LoRa, uint8_t* data, uint8_t length, uint16_t timeout);
+      |                                    ~~~~~~~~~^~~~
+../Core/Src/main.c:280:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  280 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  28616	     24	   2224	  30864	   7890	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+15:57:11 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:269:27: warning: passing argument 2 of 'LoRa_transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  269 |    LoRa_transmit(&myLoRa, &currente, 1, 100);
+      |                           ^~~~~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:123:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  123 | uint8_t LoRa_transmit(LoRa* _LoRa, uint8_t* data, uint8_t length, uint16_t timeout);
+      |                                    ~~~~~~~~~^~~~
+../Core/Src/main.c:260:26: warning: unused variable 'sConfig' [-Wunused-variable]
+  260 |   ADC_ChannelConfTypeDef sConfig = {0};
+      |                          ^~~~~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  22696	     24	   2216	  24936	   6168	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+15:57:36 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:269:27: warning: passing argument 2 of 'LoRa_transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  269 |    LoRa_transmit(&myLoRa, &currente, 1, 100);
+      |                           ^~~~~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:123:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  123 | uint8_t LoRa_transmit(LoRa* _LoRa, uint8_t* data, uint8_t length, uint16_t timeout);
+      |                                    ~~~~~~~~~^~~~
+../Core/Src/main.c:279:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  279 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  28604	     24	   2224	  30852	   7884	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+15:58:25 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:269:27: warning: passing argument 2 of 'LoRa_transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  269 |    LoRa_transmit(&myLoRa, &corrente, 1, 100);
+      |                           ^~~~~~~~~
+      |                           |
+      |                           float *
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:123:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'float *'
+  123 | uint8_t LoRa_transmit(LoRa* _LoRa, uint8_t* data, uint8_t length, uint16_t timeout);
+      |                                    ~~~~~~~~~^~~~
+../Core/Src/main.c:279:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  279 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  28600	     20	   2220	  30840	   7878	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+16:02:01 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:279:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  279 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+../Core/Src/main.c:304:27: warning: passing argument 2 of 'LoRa_transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  304 |    LoRa_transmit(&myLoRa, &currente, 1, 100);
+      |                           ^~~~~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:123:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  123 | uint8_t LoRa_transmit(LoRa* _LoRa, uint8_t* data, uint8_t length, uint16_t timeout);
+      |                                    ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  28604	     24	   2224	  30852	   7884	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+16:02:51 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:279:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  279 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+../Core/Src/main.c:304:27: warning: passing argument 2 of 'LoRa_transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  304 |    LoRa_transmit(&myLoRa, &corrente, 1, 100);
+      |                           ^~~~~~~~~
+      |                           |
+      |                           float *
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:123:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'float *'
+  123 | uint8_t LoRa_transmit(LoRa* _LoRa, uint8_t* data, uint8_t length, uint16_t timeout);
+      |                                    ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  28600	     20	   2220	  30840	   7878	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+16:04:01 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:279:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  279 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+../Core/Src/main.c:306:27: warning: passing argument 2 of 'LoRa_transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  306 |    LoRa_transmit(&myLoRa, &currente, 1, 100);
+      |                           ^~~~~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:123:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  123 | uint8_t LoRa_transmit(LoRa* _LoRa, uint8_t* data, uint8_t length, uint16_t timeout);
+      |                                    ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  30140	     20	   2228	  32388	   7e84	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+16:43:33 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:279:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  279 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  29752	     20	   2228	  32000	   7d00	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+16:45:53 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'converter_dados':
+../Core/Src/main.c:196:28: warning: passing argument 2 of 'LoRa_transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  196 |     LoRa_transmit(&myLoRa, &currente, 1, 100);
+      |                            ^~~~~~~~~
+      |                            |
+      |                            uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:123:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  123 | uint8_t LoRa_transmit(LoRa* _LoRa, uint8_t* data, uint8_t length, uint16_t timeout);
+      |                                    ~~~~~~~~~^~~~
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:281:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  281 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  29752	     20	   2228	  32000	   7d00	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+17:16:05 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:281:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  281 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+../Core/Src/main.c:309:27: warning: passing argument 2 of 'LoRa_transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  309 |    LoRa_transmit(&myLoRa, &currente, 1, 100);
+      |                           ^~~~~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:123:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  123 | uint8_t LoRa_transmit(LoRa* _LoRa, uint8_t* data, uint8_t length, uint16_t timeout);
+      |                                    ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  30140	     20	   2228	  32388	   7e84	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+17:28:38 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-size   motor-cc.elf 
+   text	   data	    bss	    dec	    hex	filename
+  30140	     20	   2228	  32388	   7e84	motor-cc.elf
+Finished building: default.size.stdout
+ 
+17:29:00 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
+    1 | // -------------------------------------------------- \\
+      | ^
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:282:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
+  282 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
+      |                                        ^~~~~~~~~~~~~
+      |                                        |
+      |                                        uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
+      |                                   ~~~~~~~~~^~~~
+../Core/Src/main.c:310:27: warning: passing argument 2 of 'LoRa_transmit' from incompatible pointer type [-Wincompatible-pointer-types]
+  310 |    LoRa_transmit(&myLoRa, &currente, 1, 100);
+      |                           ^~~~~~~~~
+      |                           |
+      |                           uint32_t * {aka long unsigned int *}
+In file included from ../Core/Src/main.c:25:
+../Core/Inc/LoRa.h:123:45: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
+  123 | uint8_t LoRa_transmit(LoRa* _LoRa, uint8_t* data, uint8_t length, uint16_t timeout);
+      |                                    ~~~~~~~~~^~~~
+arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: motor-cc.elf
+ 
+arm-none-eabi-size   motor-cc.elf 
+arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
+arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
+   text	   data	    bss	    dec	    hex	filename
+  30140	     20	   2228	  32388	   7e84	motor-cc.elf
+Finished building: default.size.stdout
+ 
+Finished building: motor-cc.bin
+ 
+Finished building: motor-cc.list
+ 
+13:46:44 **** Incremental Build of configuration Debug for project motor-cc ****
+make -j8 all 
+arm-none-eabi-size   motor-cc.elf 
+   text	   data	    bss	    dec	    hex	filename
+  30140	     20	   2228	  32388	   7e84	motor-cc.elf
+Finished building: default.size.stdout
+ 

@@ -1,34 +1,10 @@
-16:11:12 **** Incremental Build of configuration Debug for project motor-cc ****
+13:46:44 **** Incremental Build of configuration Debug for project motor-cc ****
 make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G0B1xx -c -I../Core/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc -I../Drivers/STM32G0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-In file included from ../Core/Src/main.c:25:
-../Core/Inc/LoRa.h:1:1: warning: multi-line comment [-Wcomment]
-    1 | // -------------------------------------------------- \\
-      | ^
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:258:40: warning: passing argument 2 of 'LoRa_receive' from incompatible pointer type [-Wincompatible-pointer-types]
-  258 |    packet_size = LoRa_receive(&myLoRa, received_data, 1);
-      |                                        ^~~~~~~~~~~~~
-      |                                        |
-      |                                        uint32_t * {aka long unsigned int *}
-In file included from ../Core/Src/main.c:25:
-../Core/Inc/LoRa.h:125:44: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'uint32_t *' {aka 'long unsigned int *'}
-  125 | uint8_t LoRa_receive(LoRa* _LoRa, uint8_t* data, uint8_t length);
-      |                                   ~~~~~~~~~^~~~
-arm-none-eabi-gcc -o "motor-cc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"/home/lucas/Documentos/Repositorios/padolabs-projects/2022-1/luan-camille-gabrielly-lucas-nicholas/motor-cc/STM32G0B1RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="motor-cc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: motor-cc.elf
- 
 arm-none-eabi-size   motor-cc.elf 
-arm-none-eabi-objdump -h -S  motor-cc.elf  > "motor-cc.list"
-arm-none-eabi-objcopy  -O binary  motor-cc.elf  "motor-cc.bin"
    text	   data	    bss	    dec	    hex	filename
-  27440	     20	   2220	  29680	   73f0	motor-cc.elf
+  30140	     20	   2228	  32388	   7e84	motor-cc.elf
 Finished building: default.size.stdout
  
-Finished building: motor-cc.bin
- 
-Finished building: motor-cc.list
- 
 
-16:11:13 Build Finished. 0 errors, 2 warnings. (took 368ms)
+13:46:44 Build Finished. 0 errors, 0 warnings. (took 172ms)
 

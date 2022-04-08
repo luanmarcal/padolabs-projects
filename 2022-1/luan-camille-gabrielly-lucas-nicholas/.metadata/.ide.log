@@ -33,3 +33,18 @@
 2022-04-05 16:11:13,680 [ERROR] ConfigurationRetriever:139 - IOException on connection: sw-center.st.com
 2022-04-05 16:11:13,681 [ERROR] ConfigurationRetriever:139 - IOException on connection: sw-center.st.com
 2022-04-05 16:11:13,682 [ERROR] ConfigurationRetriever:139 - IOException on connection: sw-center.st.com
+2022-04-06 15:13:55,669 [INFO] Activator:177 - 
+
+
+2022-04-06 15:13:55,670 [INFO] Activator:178 - !SESSION log4j initialized
+2022-04-06 15:14:02,034 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2022-04-07 13:46:18,277 [INFO] Activator:177 - 
+
+
+2022-04-07 13:46:18,279 [INFO] Activator:178 - !SESSION log4j initialized
+2022-04-07 13:46:25,560 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
+2022-04-08 13:47:34,814 [INFO] Activator:177 - 
+
+
+2022-04-08 13:47:34,816 [INFO] Activator:178 - !SESSION log4j initialized
+2022-04-08 13:47:40,192 [ERROR] AnalyticsContext:980 - The ST intranet updater server is unknown: mcucrossselector.codex.cro.st.com
