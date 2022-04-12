@@ -268,7 +268,12 @@ int main(void)
 
   while (1)
   {
+	  HAL_GPIO_WritePin(LES_GPIO_Port, LES_Pin, 1);
+	  HAL_GPIO_WritePin(LDI_GPIO_Port, LDI_Pin, 1);
+	  HAL_GPIO_WritePin(LED3_GPIO_Port, LED3_Pin, 0);
 
+//	  HAL_GPIO_WritePin(LD_S_GPIO_Port, LD_S_Pin, 1);
+//	  HAL_GPIO_WritePin(LE_I_GPIO_Port, LE_I_Pin, 1);
 
 	  if(received_data[0] != 0){
 		  lora_data = received_data[0];
