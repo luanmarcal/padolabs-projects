@@ -55,11 +55,11 @@ uint16_t teste;
 uint32_t received_data[10];
 uint32_t packet_size = 0, lora_data;
 
-uint8_t contador, cont = 0, flag = 0;
+uint8_t contador, cont = 0, flag = 0, flagui = 0;
 uint32_t e_analogica, ADmax;
 float tensao, media=0, corrente;
 uint32_t currente;
-
+uint8_t tx = 0, rx = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -74,6 +74,14 @@ static void MX_SPI1_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+//void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+//
+//	  if(packet_size == 1){
+//		  flagui = 1;
+//	  }
+//
+//}
+
 void PWM_Set_DC(TIM_HandleTypeDef *timer, uint32_t channel, uint8_t dc){
 	uint32_t arr, ccrx;
 
@@ -118,6 +126,7 @@ float calcTensao(uint16_t num){
 	return temp;
 }
 void converter_dados(uint32_t num){
+
 	if(flag == 1){
 
 		switch(num){
@@ -138,11 +147,24 @@ void converter_dados(uint32_t num){
 				break;
 
 			case 5:
-				PWM_Set_DC(&htim2, TIM_CHANNEL_1, 100);
+				HAL_GPIO_WritePin(LDS_GPIO_Port, LDS_Pin, 0);
+				HAL_GPIO_WritePin(LEI_GPIO_Port, LEI_Pin, 0);
+
+				HAL_Delay(10);
+
+				HAL_GPIO_WritePin(LES_GPIO_Port, LES_Pin, 1);
+				HAL_GPIO_WritePin(LDI_GPIO_Port, LDI_Pin, 1);
+
 				break;
 
 			case 6:
-				PWM_Set_DC(&htim2, TIM_CHANNEL_1, 100);
+				HAL_GPIO_WritePin(LES_GPIO_Port, LES_Pin, 0);
+				HAL_GPIO_WritePin(LDI_GPIO_Port, LDI_Pin, 0);
+
+				HAL_Delay(10);
+
+				HAL_GPIO_WritePin(LDS_GPIO_Port, LDS_Pin, 1);
+				HAL_GPIO_WritePin(LEI_GPIO_Port, LEI_Pin, 1);
 				break;
 
 			case 7:
@@ -161,7 +183,14 @@ void converter_dados(uint32_t num){
 				if(flag == 1 && cont > 1){
 					flag = 0;
 					cont = 0;
-					PWM_Set_DC(&htim2, TIM_CHANNEL_1, 0);
+					HAL_GPIO_WritePin(LES_GPIO_Port, LES_Pin, 0);
+					HAL_GPIO_WritePin(LDI_GPIO_Port, LDI_Pin, 0);
+
+					HAL_GPIO_WritePin(LDS_GPIO_Port, LDS_Pin, 0);
+					HAL_GPIO_WritePin(LEI_GPIO_Port, LEI_Pin, 0);
+
+					HAL_GPIO_WritePin(Vermelho_GPIO_Port, Vermelho_Pin, 0);
+					HAL_GPIO_WritePin(Verde_GPIO_Port, Verde_Pin, 1);
 				}
 				break;
 
@@ -231,15 +260,14 @@ int main(void)
   MX_ADC1_Init();
   MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
+
+
   myLoRa = newLoRa();
 
     	myLoRa.hSPIx                 = &hspi1;
     	myLoRa.CS_port               = NSS_GPIO_Port;
     	myLoRa.CS_pin                = NSS_Pin;
-    	myLoRa.reset_port            = RESET_GPIO_Port;
-    	myLoRa.reset_pin             = RESET_Pin;
-    	myLoRa.DIO0_port						 = DIO0_GPIO_Port;
-    	myLoRa.DIO0_pin							 = DIO0_Pin;
+
 
     	myLoRa.frequency             = 433;							  // default = 433 MHz
     	myLoRa.spredingFactor        = SF_7;							// default = SF_7
@@ -255,6 +283,8 @@ int main(void)
     	LoRa_startReceiving(&myLoRa);
 
 
+  HAL_TIM_Base_Start_IT(&htim2);
+
   HAL_TIM_PWM_Start(&htim2, TIM_CHANNEL_1);
 
   PWM_Set_DC(&htim2, TIM_CHANNEL_1, 0);
@@ -268,22 +298,18 @@ int main(void)
 
   while (1)
   {
-	  HAL_GPIO_WritePin(LES_GPIO_Port, LES_Pin, 1);
-	  HAL_GPIO_WritePin(LDI_GPIO_Port, LDI_Pin, 1);
-	  HAL_GPIO_WritePin(LED3_GPIO_Port, LED3_Pin, 0);
-
-//	  HAL_GPIO_WritePin(LD_S_GPIO_Port, LD_S_Pin, 1);
-//	  HAL_GPIO_WritePin(LE_I_GPIO_Port, LE_I_Pin, 1);
 
 	  if(received_data[0] != 0){
 		  lora_data = received_data[0];
 
 		  if(lora_data == 10 ){
 			  flag = 1;
+			  HAL_GPIO_WritePin(Verde_GPIO_Port, Verde_Pin, 0);
+			  HAL_GPIO_WritePin(Vermelho_GPIO_Port, Vermelho_Pin, 1);
 			  cont ++;
 		  }
   	  }
-	  HAL_Delay(500);
+	  HAL_Delay(100);
 	  packet_size = LoRa_receive(&myLoRa, received_data, 1);
 
 
@@ -312,8 +338,10 @@ int main(void)
 
 	  converter_dados(lora_data);
 
-	  LoRa_transmit(&myLoRa, &currente, 1, 100);
-
+//	  if(packet_size != 0){
+//		  tx = LoRa_transmit(&myLoRa, &currente, 1, 100);
+//
+//	  }
 
     /* USER CODE END WHILE */
 
@@ -483,7 +511,7 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 63;
+  htim2.Init.Prescaler = 63999;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
   htim2.Init.Period = 999;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
@@ -515,6 +543,10 @@ static void MX_TIM2_Init(void)
   {
     Error_Handler();
   }
+  if (HAL_TIM_PWM_ConfigChannel(&htim2, &sConfigOC, TIM_CHANNEL_2) != HAL_OK)
+  {
+    Error_Handler();
+  }
   /* USER CODE BEGIN TIM2_Init 2 */
 
   /* USER CODE END TIM2_Init 2 */
@@ -537,13 +569,26 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOC, LEI_Pin|LDI_Pin|Vermelho_Pin|LES_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(NSS_GPIO_Port, NSS_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, RESET_Pin|DIO0_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(Verde_GPIO_Port, Verde_Pin, GPIO_PIN_SET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(LDS_GPIO_Port, LDS_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : LEI_Pin LDI_Pin LES_Pin */
+  GPIO_InitStruct.Pin = LEI_Pin|LDI_Pin|LES_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pin : PC13 */
   GPIO_InitStruct.Pin = GPIO_PIN_13;
@@ -565,12 +610,19 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(NSS_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : RESET_Pin DIO0_Pin */
-  GPIO_InitStruct.Pin = RESET_Pin|DIO0_Pin;
+  /*Configure GPIO pins : Verde_Pin Vermelho_Pin */
+  GPIO_InitStruct.Pin = Verde_Pin|Vermelho_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : LDS_Pin */
+  GPIO_InitStruct.Pin = LDS_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
+  HAL_GPIO_Init(LDS_GPIO_Port, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
   HAL_NVIC_SetPriority(EXTI4_15_IRQn, 0, 0);

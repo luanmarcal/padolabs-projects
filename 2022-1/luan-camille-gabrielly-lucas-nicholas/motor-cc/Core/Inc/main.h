@@ -59,14 +59,22 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define LEI_Pin GPIO_PIN_11
+#define LEI_GPIO_Port GPIOC
+#define LDI_Pin GPIO_PIN_12
+#define LDI_GPIO_Port GPIOC
 #define LED_Pin GPIO_PIN_5
 #define LED_GPIO_Port GPIOA
 #define NSS_Pin GPIO_PIN_7
 #define NSS_GPIO_Port GPIOA
-#define RESET_Pin GPIO_PIN_4
-#define RESET_GPIO_Port GPIOC
-#define DIO0_Pin GPIO_PIN_5
-#define DIO0_GPIO_Port GPIOC
+#define Verde_Pin GPIO_PIN_4
+#define Verde_GPIO_Port GPIOC
+#define Vermelho_Pin GPIO_PIN_5
+#define Vermelho_GPIO_Port GPIOC
+#define LDS_Pin GPIO_PIN_8
+#define LDS_GPIO_Port GPIOB
+#define LES_Pin GPIO_PIN_10
+#define LES_GPIO_Port GPIOC
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
