@@ -471,6 +471,7 @@ int main(void)
 			  HAL_Delay(100);
 			  HAL_GPIO_WritePin(buzzer_GPIO_Port, buzzer_Pin, 0);
 			  cont ++;
+
 		  }
   	  }
 	  HAL_Delay(150);

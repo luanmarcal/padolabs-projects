@@ -6036,6 +6036,7 @@ int main(void)
  8002b32:	b2da      	uxtb	r2, r3
  8002b34:	4b50      	ldr	r3, [pc, #320]	; (8002c78 <main+0x274>)
  8002b36:	701a      	strb	r2, [r3, #0]
+
 		  }
   	  }
 	  HAL_Delay(150);
