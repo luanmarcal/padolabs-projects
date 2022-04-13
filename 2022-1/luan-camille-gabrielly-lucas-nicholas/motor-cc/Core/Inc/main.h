@@ -63,6 +63,8 @@ void Error_Handler(void);
 #define LEI_GPIO_Port GPIOC
 #define LDI_Pin GPIO_PIN_12
 #define LDI_GPIO_Port GPIOC
+#define buzzer_Pin GPIO_PIN_3
+#define buzzer_GPIO_Port GPIOC
 #define LED_Pin GPIO_PIN_5
 #define LED_GPIO_Port GPIOA
 #define NSS_Pin GPIO_PIN_7
